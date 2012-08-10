@@ -28,6 +28,7 @@ Converter "X-lint" RuleSet Wiki
 
 <div id="multi"></div>
 <div id="multi1"></div>
+
 #### Multimedia
 ##### Low image quality in high resolution screen
 The following picture shows a typical example：
@@ -39,12 +40,14 @@ Although the screen size of Iphone4S is 960*640 with retina display, the photo s
 When meeting this kind of situation, the X-lint will promote to provide high resolution images.
 
 <div id="multi2"></div>
+
 ##### High image quality in low resolution screen
 This situation is the opposite of the former. Although in this situation the image shown won't be hard to recognize, it indeed cost unnecessary bandwidth.
 
 When meeting this kind of situation, the X-lint will promote to compress images for low resolution
 
 <div id="multi3"></div>
+
 #### Detect non-compatible format of images, audio and video for target
 The images format of JPEG,GIF and PNG can be almost displayed in all browsers, but there are some other image formats that might not be supported in some browser:
 
@@ -117,6 +120,7 @@ X-lint will provide a good pattern like:
 
 
 <div id="multi4"></div>
+
 #### Use non-compatible ways to play audio or videos (Flash etc.)
 There are some platforms that doesn't support some ways to play audio or videos,or it is impossible for the platform to install FLash plugin. For example, Iphone and Ipad don't support Flash:
 
@@ -146,6 +150,7 @@ X-lint will provide HTML5 ways of playing audio and video :
 
 <div id="css"></div>
 <div id="css1"></div>
+
 #### CSS
 ##### Use vendor prefixed CSS styles
 The user may hate writing vendor prefixes for different browsers which is necessary for different browsers to run the code correctly.When X-lint detect vendor prefixed CSS styles, it will provide standard as well as other vendor prefixed styles for it:
@@ -191,6 +196,7 @@ div {
 * For more information about [vendor prefixed css](http://peter.sh/experiments/vendor-prefixed-css-property-overview/).
 
 <div id="css2"></div>
+
 ##### Use absolute units in CSS
 X-lint tend to use relative rather than absolute units. This way the content of a page will adjust better to the browser window and fonts will be displayed relative to the users specifications or relative to the default settings of the browser. But this may not always be the case, in some situation, it might be better to use absuloute units:
 
@@ -215,6 +221,7 @@ h3 {wird-spacing: 3ch}
 ```
 	
 <div id="css3"></div>
+
 ##### Use 2D transform for 3D hardware accelerated platform
 Some platforms such as Firefox and Chrome support 3D transform, X-lint will provide 3D transform instead of 2D if detected：
 
@@ -247,12 +254,14 @@ div
 ```
 
 <div id="css4"></div>
+
 ##### Find font-size/font
 fond-size/font may change the layout of a site considerably. Different browsers interpret font sizes differently, so a font that appears readable in IE may be smaller when viewed in Chrome. In addition, font sizes on different platforms are not always the same. X-lint tend to specify a font size in pixels (px) not points (pt) or em. Using a pt or em font-size property instead of px allows for the site text to be resized according to the viewer's system settings. If their system is set to view very large text, your web site's layout will become distorted and your web site may be illegible to them. 
 
 Also, user may  set the font-size pixels too small. Some people may not be able to read tiny text and adjusting their system text size will have no effect on the site because the font-size is specified as px. And X-lint will provide a recommended font-size for target device.
 
 <div id="css5"></div>
+
 ##### Use missing styles for target platform
 Some platform may not support some styles. When detect this problem, X-lint will provide a fallback or warn users to change it manually:
 
@@ -268,6 +277,7 @@ p {
 	
 <div id="js"></div>
 <div id="js1"></div>
+
 #### JS
 ##### Use consecutive multiple styles instead of class in scripts
 X-lint considers manipulating CSS styles in JavaScript code an anti pattern :
@@ -306,11 +316,13 @@ function changeCSS() {
 
 
 <div id="js2"></div>
+
 ##### Use platform dependent Web Runtime APIs
 
 
 <div id="html"></div>
 <div id="html1"></div>
+
 #### HTML
 ##### Use consecutive multiple styles instead of class
 X-lint considers in-line CSS an anti pattern. When detect this problem, X-lint will provide extracted classes:
@@ -336,6 +348,7 @@ p {
 ```
 
 <div id="html2"></div>
+
 ##### Viewport misuse
 The viewport meta tag is to let web developers control the viewport's size and scale. X-lint will promote to provide sutable viewport setting maybe with media query. A typical setting of viewport is like:
 ```html
