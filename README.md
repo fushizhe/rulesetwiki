@@ -32,7 +32,7 @@ Converter "X-lint" RuleSet Wiki
 ##### Low image quality in high resolution screen
 The following picture shows a typical example：
 
-![alt text](images/iphoneblur.jpg "low image quality")
+![alt text](http://img170.poco.cn/mypoco/myphoto/20120809/15/6605096520120809155105024.jpg "low image quality")
 
 Although the screen size of Iphone4S is 960*640 with retina display, the photo shown is of low quality and hard to recognize.
 
