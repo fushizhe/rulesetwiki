@@ -195,8 +195,8 @@ div {
 X-lint tend to use relative rather than absolute units. This way the content of a page will adjust better to the browser window and fonts will be displayed relative to the users specifications or relative to the default settings of the browser. But this may not always be the case, in some situation, it might be better to use absuloute units:
 
 ```CSS
-<!-- these are some absolute units that X-lint will warn users -->
-<!-- it is hard to adjust for multiple screens -->
+/* these are some absolute units that X-lint will warn users */
+/* it is hard to adjust for multiple screens */
 h1 { margin: 0.5in;}      /* inches  */
 h2 { line-height: 3cm;}   /* centimeters */
 h3 { word-spacing: 4mm;}  /* millimeters */
@@ -207,8 +207,8 @@ p  { font-size: 12px;}    /* px */
 	
 X-lint tend to use :
 
-```html
-<!-- these are some relative units that X-lint tend to use them -->
+```CSS
+/* these are some relative units that X-lint tend to use them */
 h1 {line-height: 1.2em }
 h2 {margin: 2ex}
 h3 {wird-spacing: 3ch}	
@@ -219,8 +219,8 @@ h3 {wird-spacing: 3ch}
 Some platforms such as Firefox and Chrome support 3D transform, X-lint will provide 3D transform instead of 2D if detected：
 
 ```CSS
-<!-- Suppose the platform is Chrome which supports 3D transform -->
-<!-- these are 2D transform, X-lint will provide 3D transform  -->
+/* Suppose the platform is Chrome which supports 3D transform */
+/* these are 2D transform, X-lint will provide 3D transform  */
 div
 {
   transform: translate(50px,100px);
@@ -234,7 +234,7 @@ div
 X-lint will provide:
 
 ```CSS
-<!-- X-lint provides 3D tranform -->
+/* X-lint provides 3D tranform */
 div
 {
   transform: rotateX(50px);
@@ -257,9 +257,9 @@ Also, user may  set the font-size pixels too small. Some people may not be able 
 Some platform may not support some styles. When detect this problem, X-lint will provide a fallback or warn users to change it manually:
 
 ```CSS	
-<!-- IE -->
-<!-- IE doesn't support 'outline' -->
-<!-- X-lint will provide a fallback or warn users to change it manually
+/* IE */
+/* IE doesn't support 'outline' */
+/* X-lint will provide a fallback or warn users to change it manually */
 p {
   border:1px solid red;
   outline:green dotted thick;
@@ -274,8 +274,8 @@ X-lint considers manipulating CSS styles in JavaScript code an anti pattern :
 
 
 ```JavaScript
-<!-- JavaScript Code -->
-<!-- the code tries to manipulate CSS styles directly--> 
+// JavaScript Code 
+// the code tries to manipulate CSS styles directly
 function changeCSS(){
   document.getElementById("t").style.color= "red";
   document.getElementById("t").style.fontSize= "30px";
@@ -287,7 +287,7 @@ function changeCSS(){
 X-lint will provide extracted CSS class of the change so that user can manipulate the CSS styles by changing the tag's class, which X-lint considers a best practice: 
 
 ```CSS
-<!-- X-lint will provide extracted class in CSS for user to manipulate -->
+/* X-lint will provide extracted class in CSS for user to manipulate */
 .converted {
   color: red;
   font-size: 30px;
@@ -298,7 +298,7 @@ X-lint will provide extracted CSS class of the change so that user can manipulat
 User then can manipulate the style using JavaScript like:
 
 ```JavaScript
-<!-- Use JavaScript to change the class of the tag instead of manupulating CSS style directly-->
+//Use JavaScript to change the class of the tag instead of manupulating CSS style directly
 function changeCSS() {
   document.getElementById("t").className = "converted";
  }
@@ -327,7 +327,7 @@ X-lint considers in-line CSS an anti pattern. When detect this problem, X-lint w
 
 
 ```CSS
-<!-- extracted class in CSS -->
+/* extracted class in CSS */
 p {
   font-size: 10px;
   color: #FFFFFF;
