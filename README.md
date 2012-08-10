@@ -151,8 +151,8 @@ X-lint will provide HTML5 ways of playing audio and video :
 The user may hate writing vendor prefixes for different browsers which is necessary for different browsers to run the code correctly.When X-lint detect vendor prefixed CSS styles, it will provide standard as well as other vendor prefixed styles for it:
 
 ```css
-<!-- here are some vendor prefixed CSS styles without -->
-<!--providing standard and othervendor prefixed styles -->
+/* here are some vendor prefixed CSS styles without */
+/* providing standard and othervendor prefixed styles */
 div {-moz-border-radius: 10px;}
 div {-webkit-border-radius: 20px;}
 #sample1 {-moz-box-shadow: -5px -5px 5px;}
@@ -263,7 +263,7 @@ Some platform may not support some styles. When detect this problem, X-lint will
 p {
   border:1px solid red;
   outline:green dotted thick;
-  ｝
+｝
 ```
 	
 <div id="js"></div>
@@ -337,6 +337,10 @@ p {
 
 <div id="html2"></div>
 ##### Viewport misuse
-
+The viewport meta tag is to let web developers control the viewport's size and scale. X-lint will promote to provide sutable viewport setting maybe with media query. A typical setting of viewport is like:
+```html
+<!-- a typical setting of viewport -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+```
     
 
