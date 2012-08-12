@@ -4,7 +4,7 @@ Converter "X-lint" RuleSet Wiki
 
 
 ### Introduction
-  In order to help developer build apps with good responsive design, we introduce some rules that indicates what's the "Anti Pattern" and what X-lint thinks might be the "Best Practice". In the following document, we will explain in detail about these rules. We may give sample code for some rules.
+  In order to help developer build applications with good responsive design, we introduce some rules that indicate what are the "Anti Pattern" and what X-lint thinks might be the "Best Practice". In the following document, we will explain in detail about these rules. We may give sample code for some rules.
 ### Category
 #### [Mulitimedia](#multi)
 ##### [Low image quality in high resolution screen](#multi1)
@@ -42,14 +42,14 @@ When meeting this kind of situation, the X-lint will promote to provide high res
 <div id="multi2"></div>
 
 ##### High image quality in low resolution screen
-This situation is the opposite of the former. Although in this situation the image shown won't be hard to recognize, it indeed cost unnecessary bandwidth.
+This situation is the opposite of the former. Although in this situation the image shown won't be hard to recognize, it indeed costs unnecessary bandwidth.
 
 When meeting this kind of situation, the X-lint will promote to compress images for low resolution
 
 <div id="multi3"></div>
 
 #### Detect non-compatible format of images, audio and video for target
-The images format of JPEG,GIF and PNG can be almost displayed in all browsers, but there are some other image formats that might not be supported in some browser:
+The images format of jpeg,gif and png can be almost displayed in all browsers, but there are some other image formats that might not be supported in some browser:
 
 ```html
 <!-- Opera doesn't support '.tiff' -->
@@ -95,16 +95,6 @@ The tag '\<video>' is pretty much the same as the tag '\<audio>' :
 <!-- X-lint will suggested that user provided different formats for compatibility -->  
 ```
 
-
-```html
-<!-- Anti Pattern -->
-<!-- The browser will use the first recognized format -->
-<video width="320" height="240" controls="controls">
-  <source src="movie.mp4" type="video/mp4" />
-  <source src="movie.ogg" type="video/ogg" />
-</video>
-```
-
 X-lint will provide a good pattern like:
 
 ```html
@@ -122,7 +112,7 @@ X-lint will provide a good pattern like:
 <div id="multi4"></div>
 
 #### Use non-compatible ways to play audio or videos (Flash etc.)
-There are some platforms that doesn't support some ways to play audio or videos,or it is impossible for the platform to install FLash plugin. For example, Iphone and Ipad don't support Flash:
+There are some platforms that doesn't support some ways to play audio or videos,or it is impossible for the platform to install Flash plugin. For example, Iphone and Ipad don't support Flash:
 
 ```html
 <!-- Iphone and Ipad don't support Flash -->
@@ -142,6 +132,7 @@ X-lint will provide HTML5 ways of playing audio and video :
   <source src="hello.wav" type="audio/wav" />
   <source src="hello.mp3" type="audio/mp3" />
 </audio> 
+
 <video width="320" height="240" controls="controls">
   <source src="hello.mp4" type="video/mp4" />
   <source src="hello.ogg" type="video/ogg" />
@@ -285,7 +276,7 @@ X-lint considers manipulating CSS styles in JavaScript code an anti pattern :
 
 ```JavaScript
 // JavaScript Code 
-// the code tries to manipulate CSS styles directly
+// the code tries to manipulate CSS styles directly which is an anti pattern
 function changeCSS(){
   document.getElementById("t").style.color= "red";
   document.getElementById("t").style.fontSize= "30px";
