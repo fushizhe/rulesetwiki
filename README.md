@@ -60,7 +60,7 @@ The images format of JPEG,GIF and PNG can be almost displayed in all browsers, b
 
 * For more information about [image format support](http://en.wikipedia.org/wiki/Comparison_of_web_browsers#Image_format_support)。
 
-The tag '\<audio>' is a newly defined element in HTML5 ,it specifies a standard way to embed an audio file on a web page. Currently, there are 3 supported file formats for the '\<audio>' element: MP3, Wav, and Ogg. But the supportability of the 3 file formats is not the same in different browsers. X-lint will check the compatibility of audio format for target, and suggested that user provided different formats for compatibility:
+The tag '\<audio>' is a newly defined element in HTML5 ,it specifies a standard way to embed an audio file on a web page. Currently, there are 3 supported file formats for the '\<audio>' element: mp3, wav, and ogg. But the supportability of the 3 file formats is not the same in different browsers. X-lint will check the compatibility of audio format for target, and suggested that user provided different formats for compatibility:
 
 
 ```html
