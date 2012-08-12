@@ -309,6 +309,8 @@ function changeCSS() {
 <div id="js2"></div>
 
 ##### Use platform dependent Web Runtime APIs
+When X-lint detect platform dependent web runtime API, it will warn the developer it can't be run in other platform.
+X-lint might suggest user use cross-platform framework like PhoneGap.
 
 
 <div id="html"></div>
