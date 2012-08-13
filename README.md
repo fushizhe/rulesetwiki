@@ -1,10 +1,10 @@
 
-Converter "X-lint" RuleSet Wiki
+Responsive Design RuleSet Wiki
 ================================
 
 
 ### Introduction
-  In order to help developer build applications with good responsive design, we introduce some rules that indicate what are the "Anti Pattern" and what X-lint thinks might be the "Best Practice". In the following document, we will explain in detail about these rules. We may give sample code for some rules.
+  In order to help developer build applications with good responsive design, we introduce some rules that indicate what are the "Anti Pattern" and what might be the "Best Practice". In the following document, we will explain in detail about these rules. We may give sample code for some rules.
 ### Category
 #### [Mulitimedia](#multi)
 1.	[Low image quality in high resolution screen](#multi1)
@@ -37,18 +37,16 @@ Converter "X-lint" RuleSet Wiki
 ##### Low image quality in high resolution screen
 The following picture shows a typical example：
 
-![alt text](http://img170.poco.cn/mypoco/myphoto/20120809/15/6605096520120809155105024.jpg "low image quality")
+![alt text](http://img13.poco.cn/mypoco/myphoto/20120813/16/6445810220120813160733026.jpg "low image quality")
 
-Although the screen size of Iphone4S is 960*640 with retina display, the photo shown is of low quality and hard to recognize.
-
-When meeting this kind of situation, the X-lint will promote to provide high resolution images.
+When meeting this kind of situation, the developer should provide high resolution images.
 
 <a name="multi2"/>
 
 ##### High image quality in low resolution screen
 This situation is the opposite of the former. Although in this situation the image shown won't be hard to recognize, it indeed costs unnecessary bandwidth.
 
-When meeting this kind of situation, the X-lint will promote to compress images for low resolution
+When meeting this kind of situation, the developer should compress images for low resolution
 
 <a name="multi3"/>
 
@@ -64,7 +62,7 @@ The images format of jpeg,gif and png can be almost displayed in all browsers, b
 
 * For more information about [image format support](http://en.wikipedia.org/wiki/Comparison_of_web_browsers#Image_format_support)。
 
-The tag '\<audio>' is a newly defined element in HTML5 ,it specifies a standard way to embed an audio file on a web page. Currently, there are 3 supported file formats for the '\<audio>' element: mp3, wav, and ogg. But the supportability of the 3 file formats is not the same in different browsers. X-lint will check the compatibility of audio format for target, and suggested that user provided different formats for compatibility:
+The tag `<audio>` is a newly defined element in HTML5 ,it specifies a standard way to embed an audio file on a web page. Currently, there are 3 supported file formats for the `<audio>` element: mp3, wav, and ogg. But the supportability of the 3 file formats is not the same in different browsers. Developer should check the compatibility of audio format for target, and provides different formats for compatibility:
 
 
 ```html
@@ -76,7 +74,7 @@ The tag '\<audio>' is a newly defined element in HTML5 ,it specifies a standard 
 <!-- X-lint will suggested that user provided different formats for compatibility -->  
 ```
 
-X-lint will provide a good pattern like:
+A good pattern is like:
 
 ```html
 <!-- Good Pattern -->
@@ -88,25 +86,25 @@ X-lint will provide a good pattern like:
 </audio> 
 ```
 
-The tag '\<video>' is pretty much the same as the tag '\<audio>' :
+The tag `<video>` is pretty much the same as the tag `<audio>` :
 
 ```html
 <!-- Anti Pattern -->
-<!-- suppose the target is IE which doesn't support '.ogg' -->
+<!-- suppose the target is IE which doesn't support '.ogv' -->
 <video width="320" height="240" controls="controls">
-  <source src="movie.ogg" type="video/ogg" />
+  <source src="movie.ogv" type="video/ogv" />
 </video>
 <!-- X-lint will suggested that user provided different formats for compatibility -->  
 ```
 
-X-lint will provide a good pattern like:
+A good pattern is like:
 
 ```html
 <!-- Good Pattern -->
 <!-- The browser will use the first recognized format -->
 <video width="320" height="240" controls="controls">
   <source src="movie.mp4" type="video/mp4" />
-  <source src="movie.ogg" type="video/ogg" />
+  <source src="movie.ogv" type="video/ogv" />
 </video>
 ```
 
@@ -116,10 +114,10 @@ X-lint will provide a good pattern like:
 <a name="multi4"/>
 
 #### Use non-compatible ways to play audio or videos (Flash etc.)
-There are some platforms that doesn't support some ways to play audio or videos,or it is impossible for the platform to install Flash plugin. For example, Iphone and Ipad don't support Flash:
+There are some platforms that doesn't support some ways to play audio or videos,or it is impossible for the platform to install Flash plugin. For example, iPhone and iPad don't support Flash:
 
 ```html
-<!-- Iphone and Ipad don't support Flash -->
+<!-- iPhone and iPad don't support Flash -->
 <embed 
   src="hello.swf" quality="high" bgcolor="#000000" width="320" height="200"> 
 </embed>
@@ -139,7 +137,7 @@ X-lint will provide HTML5 ways of playing audio and video :
 
 <video width="320" height="240" controls="controls">
   <source src="hello.mp4" type="video/mp4" />
-  <source src="hello.ogg" type="video/ogg" />
+  <source src="hello.ogv" type="video/ogv" />
 </video>
 ```
 
@@ -148,44 +146,35 @@ X-lint will provide HTML5 ways of playing audio and video :
 
 #### CSS
 ##### Use vendor prefixed CSS styles
-The user may hate writing vendor prefixes for different browsers which is necessary for different browsers to run the code correctly.When X-lint detect vendor prefixed CSS styles, it will provide standard as well as other vendor prefixed styles for it:
-
+The user may hate writing vendor prefixes for different browsers which is necessary for different browsers to run the code correctly. An anti pattern is to ignore some standard or vendor prefixed styles:
 ```css
 /* here are some vendor prefixed CSS styles without */
-/* providing standard and othervendor prefixed styles */
-div {-moz-border-radius: 10px;}
-div {-webkit-border-radius: 20px;}
-#sample1 {-moz-box-shadow: -5px -5px 5px;}
-div {-webkit-border-bottom-left-radius:2em;}
-div {-ms-layout-flow: horizontal;}
+/* providing standard and other vendor prefixed styles */
+div {
+    -moz-border-radius: 10px;
+    -webkit-border-bottom-left-radius:2em;
+    -ms-layout-flow: horizontal;
+    -o-border-image:url(border.png) 30 30 round; 
+}
 ```
 
-X-lint will proveide :
+A good pattern is like :
 
 ```CSS
 div {
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px
-  }
-div {
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 20px;
-  border-radius: 20px
-  }
-#sample1 {
-  -moz-box-shadow: -5px -5px 5px;
-  -webkit-box-shadow: -5px -5px 5px;
-  box-shadow: -5px -5px 5px;
-  }
-div {
-  -webkit-border-bottom-left-radius: 2em;
-  -moz-border-radius-bottomleft: 2em;
-  border-bottom-left-radius: 2em;
-  }
-div {
-  -ms-layout-flow: horizontal
-  }
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-border-bottom-left-radius: 2em;
+    -moz-border-radius-bottomleft: 2em;
+    border-bottom-left-radius: 2em;
+    -ms-layout-flow: horizontal;
+    -moz-border-image: url(border.png) 30 30 round;
+    -ms-border-image: url(border.png) 30 30 round;
+    -o-border-image: url(border.png) 30 30 round;
+    -webkit-border-image: url(border.png) 30 30 round;
+    border-image: url(border.png) 30 30 round;
+    }
 ```
 
 * For more information about [vendor prefixed css](http://peter.sh/experiments/vendor-prefixed-css-property-overview/).
@@ -196,8 +185,8 @@ div {
 X-lint tend to use relative rather than absolute units. This way the content of a page will adjust better to the browser window and fonts will be displayed relative to the users specifications or relative to the default settings of the browser. But this may not always be the case, in some situation, it might be better to use absuloute units:
 
 ```CSS
-/* these are some absolute units that X-lint will warn users */
-/* it is hard to adjust for multiple screens */
+/* these are some absolute units that will be */
+/* hard to adjust for multiple screens */
 h1 { margin: 0.5in;}      /* inches  */
 h2 { line-height: 3cm;}   /* centimeters */
 h3 { word-spacing: 4mm;}  /* millimeters */
@@ -209,16 +198,20 @@ p  { font-size: 12px;}    /* px */
 X-lint tend to use :
 
 ```CSS
-/* these are some relative units that X-lint tend to use them */
-h1 {line-height: 1.2em }
-h2 {margin: 2ex}
-h3 {wird-spacing: 3ch}	
+/* these are some relative units */
+h1 {line-height: 1.2em; }  /* relative to font size of the element */
+h2 {margin: 2ex; }         /* relative to x-height of the element's font */
+h3 {wird-spacing: 3ch; }   /* relative to width of the "0" glyph in the element's font */
+h4 {font-size: 2rem; }	   /* relative to font size of the root element */
+p {font-size: 8vw; }       /* relative to viewport's width */
+p { margin: 2vh; }         /* relative to viewport's height */
+vmin { padding: 3vmin}     /* relative to minimum of the viewport's height and width */
 ```
 	
 <a name="css3"/>
 
 ##### Use 2D transform for 3D hardware accelerated platform
-Some platforms such as Firefox and Chrome support 3D transform, X-lint will provide 3D transform instead of 2D if detected：
+Some platforms such as Firefox and Chrome support 3D transform, developer should provide 3D transform instead of 2D if possible：
 
 ```CSS
 /* Suppose the platform is Chrome which supports 3D transform */
@@ -270,7 +263,7 @@ p {
 ｝
 ```
 
-<a name="css5">
+<a name="css6">
 
 ##### Media Queries misuse, invalid or inproper use
 TBD
