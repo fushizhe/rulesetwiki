@@ -57,7 +57,7 @@ The images format of JPEG,GIF and PNG can be almost displayed in all browsers, b
 
 The tag '\<audio>' is a newly defined element in HTML5 ,it specifies a standard way to embed an audio file on a web page. Currently, there are 3 supported file formats for the '\<audio>' element: MP3, Wav, and Ogg. But the supportability of the 3 file formats is not the same in different browsers. X-lint will check the compatibility of audio format for target, and suggested that user provided different formats for compatibility:
 	
-<pre><code><font color="red">&lt;!-- Anti Pattern --&gt;
+<pre style="background-color:#fff8f8"><code ><font color="red" style="background-color:#fff8f8">&lt;!-- Anti Pattern --&gt;
 &lt;!-- suppose the target is IE9 which doesn't support '.ogg' --&gt;
 &lt;audio controls="controls"&gt;
   &lt;source src="song.ogg" type="audio/ogg" /&gt;
@@ -67,7 +67,7 @@ The tag '\<audio>' is a newly defined element in HTML5 ,it specifies a standard 
 	
 X-lint will provide a good pattern like:
 	
-<pre><code><font color="green">&lt;!-- Good Pattern --&gt;
+<pre style="background-color:#f8fff8"><code><font color="green" "style="background-color:#f8fff8"">&lt;!-- Good Pattern --&gt;
 &lt;!-- The browser will use the first recognized format --&gt;
 &lt;audio controls="controls"&gt;
   &lt;source src="song.ogg" type="audio/ogg" /&gt;

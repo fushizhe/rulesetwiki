@@ -18,6 +18,7 @@ Converter "X-lint" RuleSet Wiki
 3.	[Use 2D transform for 3D hardware accelerated platform](#css3)
 4.	[Find font-size/font](#css4)
 5.	[Use missing styles for target platform](#css5)
+6.	[Media Queries misuse, invalid or inproper use](#css6)
 
 #### [JS](#js)
 1.	[Use consecutive multiple styles instead of class in scripts](#js1)
@@ -26,11 +27,11 @@ Converter "X-lint" RuleSet Wiki
 #### [HTML](#html)
 1.	[Use consecutive multiple styles instead of class](#html1)
 2.	[Viewport misuse](#html2)
+3.	[Use deprecated old html tags](#html3)
 
 
 
-<div id="multi"></div>
-<div id="multi1"></div>
+<a name="multi"/>
 
 #### Multimedia
 ##### Low image quality in high resolution screen
@@ -268,6 +269,11 @@ p {
   outline:green dotted thick;
 ｝
 ```
+
+<div id="css5"></div>
+
+##### Media Queries misuse, invalid or inproper use
+
 	
 <div id="js"></div>
 <div id="js1"></div>
@@ -351,5 +357,8 @@ The viewport meta tag is to let web developers control the viewport's size and s
 <!-- a typical setting of viewport -->
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 ```
-    
+
+<div id="html3"></div>
+
+##### Use deprecated old html tags
 
