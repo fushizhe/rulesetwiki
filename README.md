@@ -7,22 +7,25 @@ Converter "X-lint" RuleSet Wiki
   In order to help developer build applications with good responsive design, we introduce some rules that indicate what are the "Anti Pattern" and what X-lint thinks might be the "Best Practice". In the following document, we will explain in detail about these rules. We may give sample code for some rules.
 ### Category
 #### [Mulitimedia](#multi)
-##### [Low image quality in high resolution screen](#multi1)
-##### [High image quality in low resolution screen](#multi2)
-##### [Detect non-compatible format of images, audio and video for target](#multi3)
-##### [Use non-compatible ways to play audio or videos (Flash etc.)](#multi4)
+1.	##### [Low image quality in high resolution screen](#multi1)
+2.	##### [High image quality in low resolution screen](#multi2)
+3.	##### [Detect non-compatible format of images, audio and video for target](#multi3)
+4.	##### [Use non-compatible ways to play audio or videos (Flash etc.)](#multi4)
+
 #### [CSS](#css)
-##### [Use vendor prefixed CSS styles](#css1)
-##### [Use absolute units in CSS](#css2)
-##### [Use 2D transform for 3D hardware accelerated platform](#css3)
-##### [Find font-size/font](#css4)
-##### [Use missing styles for target platform](#css5)
+1.	##### [Use vendor prefixed CSS styles](#css1)
+2.	##### [Use absolute units in CSS](#css2)
+3.	##### [Use 2D transform for 3D hardware accelerated platform](#css3)
+4.	##### [Find font-size/font](#css4)
+5.	##### [Use missing styles for target platform](#css5)
+
 #### [JS](#js)
-##### [Use consecutive multiple styles instead of class in scripts](#js1)
-##### [Use platform dependent Web Runtime APIs](#js2)
+1.	##### [Use consecutive multiple styles instead of class in scripts](#js1)
+2.	##### [Use platform dependent Web Runtime APIs](#js2)
+
 #### [HTML](#html)
-##### [Use consecutive multiple styles instead of class](#html1)
-##### [Viewport misuse](#html2)
+1.	##### [Use consecutive multiple styles instead of class](#html1)
+2.	##### [Viewport misuse](#html2)
 
 
 
