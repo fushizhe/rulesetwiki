@@ -424,4 +424,3 @@ Here is a table showing some of the deprecated HTML tags and replacements:
 <td>text style sheets</td>
 </tr>
 </table>
-abc
