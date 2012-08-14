@@ -374,7 +374,7 @@ The viewport meta tag is to let web developers control the viewport's size and s
 <a name="html3"/>
 
 ##### Use deprecated old html tags
-Older HTML tags that have been superseded by other more functional or flexible alternatives (whether as HTML or as CSS ) are declared as deprecated by the W3C. Browsers may continue to support deprecated tags and attributes, but eventually these tags are likely to become obsolete and so future support cannot be guaranteed. And the developer should avoid to use these deprecated old html tags.
+Older HTML tags that have been superseded by other more functional or flexible alternatives (whether as HTML or as CSS ) are declared as deprecated by the W3C. Browsers may continue to support deprecated tags and attributes, but eventually these tags are likely to become obsolete and so future support cannot be guaranteed. And the developer should avoid using these deprecated old html tags.
 
 Here is a table showing some of the deprecated HTML tags and replacements:
 
