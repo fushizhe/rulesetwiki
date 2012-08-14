@@ -138,6 +138,8 @@ A good pattern is to provide HTML5 ways of playing audio and video :
 <video width="320" height="240" controls="controls">
   <source src="hello.mp4" type="video/mp4" />
   <source src="hello.ogv" type="video/ogv" />
+  <embed src="hello.swf" type="application/x-shockwave-flash"          
+   width="320" height="200" allowscriptaccess="always" allowfullscreen="true"></embed>
 </video>
 ```
 
