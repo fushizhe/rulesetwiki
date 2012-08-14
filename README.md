@@ -55,7 +55,7 @@ The images format of jpeg,gif and png can be almost displayed in all browsers, b
 
 ```html
 <!-- Opera doesn't support '.tiff' -->
-<!-- X-lint will promote users to provide other image formats -->
+<!-- The developer should provide other image formats -->
 <img src="boat.tiff" alt="Big Boat" />
 ```
 
@@ -71,7 +71,7 @@ The tag `<audio>` is a newly defined element in HTML5 ,it specifies a standard w
 <audio controls="controls">
   <source src="song.ogg" type="audio/ogg" />
 </audio>
-<!-- X-lint will suggested that user provided different formats for compatibility -->  
+<!-- The developmer should provided different formats for compatibility -->  
 ```
 
 A good pattern is like:
@@ -94,7 +94,7 @@ The tag `<video>` is pretty much the same as the tag `<audio>` :
 <video width="320" height="240" controls="controls">
   <source src="movie.ogv" type="video/ogv" />
 </video>
-<!-- X-lint will suggested that user provided different formats for compatibility -->  
+<!-- The developer should  provided different formats for compatibility -->  
 ```
 
 A good pattern is like:
@@ -124,7 +124,7 @@ There are some platforms that doesn't support some ways to play audio or videos,
 ```
 
 
-X-lint will provide HTML5 ways of playing audio and video :
+A good pattern is to provide HTML5 ways of playing audio and video :
 
 	
 ```html
@@ -216,7 +216,7 @@ Some platforms such as Firefox and Chrome support 3D transform, developer should
 
 ```CSS
 /* Suppose the platform is Chrome which supports 3D transform */
-/* these are 2D transform, X-lint will provide 3D transform  */
+/* these are 2D transform, developer should provide 3D transform  */
 div
 {
   transform: translate(50px,100px);
@@ -247,7 +247,7 @@ div
 ##### Find font-size/font
 The font-size/font in responsive design is not only concerned with screen resolution but also DPI(dots per inch).
 
-fond-size/font may change the layout of a site considerably. Different browsers interpret font sizes differently, so a font that appears readable in IE may be smaller when viewed in Chrome. In addition, font sizes on different platforms are not always the same. X-lint tend to specify a font size in pixels (px) not points (pt) or em. Using a pt or em font-size property instead of px allows for the site text to be resized according to the viewer's system settings. If their system is set to view very large text, your web site's layout will become distorted and your web site may be illegible to them. 
+fond-size/font may change the layout of a site considerably. Different browsers interpret font sizes differently, so a font that appears readable in IE may be smaller when viewed in Chrome. In addition, font sizes on different platforms are not always the same. It's better to specify a font size in pixels (px) not points (pt) or em. Using a pt or em font-size property instead of px allows for the site text to be resized according to the viewer's system settings. If their system is set to view very large text, your web site's layout will become distorted and your web site may be illegible to them. 
 
 Also, user may set the font-size pixels too small. Some people may not be able to read tiny text and adjusting their system text size will have no effect on the site because the font-size is specified as px. The developer should provide a recommended font-size for target device.
 
