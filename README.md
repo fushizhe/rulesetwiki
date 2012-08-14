@@ -317,7 +317,7 @@ function changeCSS() {
 The developer should be aware that the supportability of platform dependent web runtime APIs' varies in different platforms. 
 Here is a picture showing the supportability of web sockets in different platforms.
 
-![alt text](http://img13.poco.cn/mypoco/myphoto/20120814/10/6445810220120814105908055.png "websocket support")
+![alt text](http://img13.poco.cn/mypoco/myphoto/20120814/11/6445810220120814112612097.png "websocket support")
 
 
 <a name="html"/>
