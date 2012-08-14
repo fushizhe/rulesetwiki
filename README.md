@@ -6,7 +6,7 @@ Responsive Design RuleSet Wiki
 ### Introduction
   In order to help developer build applications with good responsive design, we introduce some rules that indicate what are the "Anti Pattern" and what might be the "Best Practice". In the following document, we will explain in detail about these rules. We may give sample code for some rules.
 ### Category
-#### [Mulitimedia](#multi)
+#### [Multimedia](#multi)
 1.	[Low image quality in high resolution screen](#multi1)
 2.	[High image quality in low resolution screen](#multi2)
 3.	[Detect non-compatible format of images, audio and video for target](#multi3)
@@ -365,10 +365,10 @@ p {
 <a name="html2"/>
 
 ##### Viewport misuse
-The viewport meta tag is to let web developers control the viewport's size and scale. X-lint will promote to provide sutable viewport setting maybe with media query. A typical setting of viewport is like:
+The viewport meta tag is to let web developers control the viewport's size and scale. There is no need to set the scale attributes because different platform has different DPI. A typical setting of viewport is like:
 ```html
 <!-- a typical setting of viewport -->
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width">
 ```
 
 <a name="html3"/>
