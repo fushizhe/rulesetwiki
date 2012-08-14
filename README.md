@@ -182,7 +182,8 @@ div {
 <a name="css2"/>
 
 ##### Use absolute units in CSS
-X-lint tend to use relative rather than absolute units. This way the content of a page will adjust better to the browser window and fonts will be displayed relative to the users specifications or relative to the default settings of the browser. But this may not always be the case, in some situation, it might be better to use absuloute units:
+It is better to use relative rather than absolute units. This way the content of a page will adjust better to the browser window and fonts will be displayed relative to the users specifications or relative to the default settings of the browser. **But this may not always be the case**, in some situation, such as when developer needs to make accurate positioning of a widget in a page, then it might be better to use absuloute units. On the whole, the deceloper should deal with absuloute units when designing responsive applications.
+
 
 ```CSS
 /* these are some absolute units that will be */
@@ -192,10 +193,10 @@ h2 { line-height: 3cm;}   /* centimeters */
 h3 { word-spacing: 4mm;}  /* millimeters */
 h4 { font-size: 12pt;}    /* points */
 h4 { font-size: 1pc;}     /* picas */
-p  { font-size: 12px;}    /* px */
+p  { font-size: 12px;}    /* pixel */
 ```
 	
-X-lint tend to use :
+Here are some relative units :
 
 ```CSS
 /* these are some relative units */
@@ -205,7 +206,7 @@ h3 {wird-spacing: 3ch; }   /* relative to width of the "0" glyph in the element'
 h4 {font-size: 2rem; }	   /* relative to font size of the root element */
 p {font-size: 8vw; }       /* relative to viewport's width */
 p { margin: 2vh; }         /* relative to viewport's height */
-vmin { padding: 3vmin}     /* relative to minimum of the viewport's height and width */
+h4 { padding: 3vmin}       /* relative to minimum of the viewport's height and width */
 ```
 	
 <a name="css3"/>
@@ -219,44 +220,46 @@ Some platforms such as Firefox and Chrome support 3D transform, developer should
 div
 {
   transform: translate(50px,100px);
-  -ms-transform: translate(50px,100px); /* IE 9 */
-  -webkit-transform: translate(50px,100px); /* Safari and Chrome */
-  -o-transform: translate(50px,100px); /* Opera */
-  -moz-transform: translate(50px,100px); /* Firefox */
+  -ms-transform: translate(50px,100px);        /* IE 9 */
+  -webkit-transform: translate(50px,100px);    /* Safari and Chrome */
+  -o-transform: translate(50px,100px);         /* Opera */
+  -moz-transform: translate(50px,100px);       /* Firefox */
  }
 ```
 
-X-lint will provide:
+developer should provide 3D transform instead of 2D if possible：
 
 ```CSS
-/* X-lint provides 3D tranform */
+/* 3D tranform instead of 2D if possible */
 div
 {
   transform: rotateX(50px);
-  -webkit-transform: rotateX(50px); /* Safari and Chrome */
-  -moz-transform: rotateX(50px); /* Firefox */
-  transform: rotateY(50px);
-  -webkit-transform: rotateY(50px); /* Safari and Chrome */
-  -moz-transform: rotateY(50px); /* Firefox */
+  -webkit-transform: translate(50px);      /* Safari and Chrome */
+  -moz-transform: translate(50px);         /* Firefox */
+  transform: translate(50px);
+  -webkit-transform: translate(50px);      /* Safari and Chrome */
+  -moz-transform: translate(50px);         /* Firefox */
 }
 ```
 
 <a name="css4"/>
 
 ##### Find font-size/font
+The font-size/font in responsive design is not only concerned with screen resolution but also DPI(dots per inch).
+
 fond-size/font may change the layout of a site considerably. Different browsers interpret font sizes differently, so a font that appears readable in IE may be smaller when viewed in Chrome. In addition, font sizes on different platforms are not always the same. X-lint tend to specify a font size in pixels (px) not points (pt) or em. Using a pt or em font-size property instead of px allows for the site text to be resized according to the viewer's system settings. If their system is set to view very large text, your web site's layout will become distorted and your web site may be illegible to them. 
 
-Also, user may  set the font-size pixels too small. Some people may not be able to read tiny text and adjusting their system text size will have no effect on the site because the font-size is specified as px. And X-lint will provide a recommended font-size for target device.
+Also, user may set the font-size pixels too small. Some people may not be able to read tiny text and adjusting their system text size will have no effect on the site because the font-size is specified as px. The developer should provide a recommended font-size for target device.
 
 <a name="css5"/>
 
 ##### Use missing styles for target platform
-Some platform may not support some styles. When detect this problem, X-lint will provide a fallback or warn users to change it manually:
+Some platform may not support some styles. When this problem occurs, the developer should be informed with a fallback or warned to change it manually:
 
 ```CSS	
 /* IE */
 /* IE doesn't support 'outline' */
-/* X-lint will provide a fallback or warn users to change it manually */
+/* the developer should be informed with a fallback or warned to change it manually */
 p {
   border:1px solid red;
   outline:green dotted thick;
@@ -273,7 +276,7 @@ TBD
 
 #### JS
 ##### Use consecutive multiple styles instead of class in scripts
-X-lint considers manipulating CSS styles in JavaScript code an anti pattern :
+Manipulating CSS styles in JavaScript code is considered to be an anti pattern :
 
 
 ```JavaScript
@@ -287,10 +290,10 @@ function changeCSS(){
 ```
 
 
-X-lint will provide extracted CSS class of the change so that user can manipulate the CSS styles by changing the tag's class, which X-lint considers a best practice: 
+The developer should provide extracted CSS class of the change so that the user can manipulate the CSS styles by changing the tag's class, which is considered to be  a best practice: 
 
 ```CSS
-/* X-lint will provide extracted class in CSS for user to manipulate */
+/* Developer should provide extracted class in CSS for user to manipulate */
 .converted {
   color: red;
   font-size: 30px;
@@ -311,8 +314,10 @@ function changeCSS() {
 <a name="js2"/>
 
 ##### Use platform dependent Web Runtime APIs
-When X-lint detect platform dependent web runtime API, it will warn the developer it can't be run in other platform.
-X-lint might suggest user use cross-platform framework like PhoneGap.
+The developer should be aware that the supportability of platform dependent web runtime APIs' varies in different platforms. 
+Here is a picture showing the supportability of web sockets in different platforms.
+
+![alt text](http://img13.poco.cn/mypoco/myphoto/20120814/10/6445810220120814105908055.png "websocket support")
 
 
 <a name="html"/>
@@ -320,18 +325,33 @@ X-lint might suggest user use cross-platform framework like PhoneGap.
 
 #### HTML
 ##### Use consecutive multiple styles instead of class
-X-lint considers in-line CSS an anti pattern. When detect this problem, X-lint will provide extracted classes:
+In-line CSS in style attribute and CSS code in HTML file are considered to be anti pattern. The developer should provide extracted classes and move CSS code to external style sheet:
 
 ```html
-<!-- X-lint considers in-line CSS an anti pattern -->
+<!-- Internal Style Sheet in HTML file is considered to be anti pattern -->
+<head>
+<style type="text/css">
+  hr {color:sienna;}
+  p {margin-left:20px;}
+  body {background-image:url("images/back40.gif");}
+</style>
+</head>
+```
+
+```html
+<!-- In-line CSS is considered to be anti pattern -->
 <p style="font-size: 10px; color: #FFFFFF;background: blue; ">
   Hello! 
 </p>
 ```
+These are solutions to the problems discussed above: 
 
-
-<br/>
-
+```html
+ <!-- Move CSS code from html file to external style sheet file is a good pattern -->
+<head>
+<link rel="stylesheet" type="text/css" href="mystyle.css" />
+</head>
+```
 
 ```CSS
 /* extracted class in CSS */
@@ -354,4 +374,54 @@ The viewport meta tag is to let web developers control the viewport's size and s
 <a name="html3"/>
 
 ##### Use deprecated old html tags
+Older HTML tags that have been superseded by other more functional or flexible alternatives (whether as HTML or as CSS ) are declared as deprecated by the W3C. Browsers may continue to support deprecated tags and attributes, but eventually these tags are likely to become obsolete and so future support cannot be guaranteed. And the developer should avoid to use these deprecated old html tags.
 
+Here is a table showing some of the deprecated HTML tags and replacements:
+
+<table border="1" width="100%" summary="Deprecated HTML tags and replacements">
+<caption><b>Deprecated HTML tags</b></caption>
+<colgroup span="3"><col width="25%"></col><col width="25%"></col>
+<col width="50%"></col></colgroup>
+<tr><th>Deprecated</th><th>Description</th><th>Replacement</th></tr><tr>
+<td>&lt;applet&gt;</td>
+<td class="h">Inserts applet</td>
+<td><a href="../query/glossaryO.shtml#object">&lt;object&gt;</a></td>
+</tr><tr>
+<td>&lt;basefont&gt;</td>
+<td class="h">sets font styles</td>
+<td><a href="../query/glossaryF.shtml#fontproperty">font</a> style sheets</td>
+</tr><tr>
+<td>&lt;center&gt;</td>
+<td class="h">centers elements</td>
+<td>&lt;<a href="../query/glossaryD.shtml#div">div</a> style="text-align:center"&gt;
+<a href="http://www.w3.org/TR/REC-html40/present/graphics.html#h-15.1.2">(W3C help)</a>
+</td></tr><tr>
+<td>&lt;dir&gt;</td>
+<td class="h">directory list</td>
+<td>&lt;<a href="../query/glossaryL.shtml#lists">ul</a>&gt;</td>
+</tr><tr>
+<td>&lt;font&gt;</td>
+<td class="h">applies font styles</td>
+<td><a href="../query/glossaryF.shtml#fontproperty">font</a> style sheets</td>
+</tr><tr>
+<td>&lt;isindex&gt;</td>
+<td class="h">adds search field</td>
+<td>&lt;<a href="../query/glossaryF.shtml#form">form</a>&gt;</td>
+</tr><tr>
+<td>&lt;menu&gt;</td>
+<td class="h">menu list</td>
+<td>&lt;<a href="../query/glossaryL.shtml#lists">ul</a>&gt;</td>
+</tr><tr>
+<td>&lt;s&gt;</td>
+<td class="h">strike through</td>
+<td><a href="../query/glossaryT.shtml#text">text</a> style sheets</td>
+</tr><tr>
+<td>&lt;strike&gt;</td>
+<td class="h">strike through</td>
+<td><a href="../query/glossaryT.shtml#text">text</a> style sheets</td>
+</tr><tr>
+<td>&lt;u&gt;</td>
+<td class="h">underline</td>
+<td><a href="../query/glossaryT.shtml#text">text</a> style sheets</td>
+</tr>
+</table>
