@@ -379,49 +379,48 @@ Older HTML tags that have been superseded by other more functional or flexible a
 Here is a table showing some of the deprecated HTML tags and replacements:
 
 <table border="1" width="100%" summary="Deprecated HTML tags and replacements">
-<caption><b>Deprecated HTML tags</b></caption>
 <colgroup span="3"><col width="25%"></col><col width="25%"></col>
 <col width="50%"></col></colgroup>
 <tr><th>Deprecated</th><th>Description</th><th>Replacement</th></tr><tr>
 <td>&lt;applet&gt;</td>
 <td class="h">Inserts applet</td>
-<td><a href="../query/glossaryO.shtml#object">&lt;object&gt;</a></td>
+<td>&lt;object&gt;</td>
 </tr><tr>
 <td>&lt;basefont&gt;</td>
 <td class="h">sets font styles</td>
-<td><a href="../query/glossaryF.shtml#fontproperty">font</a> style sheets</td>
+<td>font style sheets</td>
 </tr><tr>
 <td>&lt;center&gt;</td>
 <td class="h">centers elements</td>
-<td>&lt;<a href="../query/glossaryD.shtml#div">div</a> style="text-align:center"&gt;
+<td>&lt;div style="text-align:center"&gt;
 <a href="http://www.w3.org/TR/REC-html40/present/graphics.html#h-15.1.2">(W3C help)</a>
 </td></tr><tr>
 <td>&lt;dir&gt;</td>
 <td class="h">directory list</td>
-<td>&lt;<a href="../query/glossaryL.shtml#lists">ul</a>&gt;</td>
+<td>&lt;ul&gt;</td>
 </tr><tr>
 <td>&lt;font&gt;</td>
 <td class="h">applies font styles</td>
-<td><a href="../query/glossaryF.shtml#fontproperty">font</a> style sheets</td>
+<td>font style sheets</td>
 </tr><tr>
 <td>&lt;isindex&gt;</td>
 <td class="h">adds search field</td>
-<td>&lt;<a href="../query/glossaryF.shtml#form">form</a>&gt;</td>
+<td>&lt;form&gt;</td>
 </tr><tr>
 <td>&lt;menu&gt;</td>
 <td class="h">menu list</td>
-<td>&lt;<a href="../query/glossaryL.shtml#lists">ul</a>&gt;</td>
+<td>&lt;ul&gt;</td>
 </tr><tr>
 <td>&lt;s&gt;</td>
 <td class="h">strike through</td>
-<td><a href="../query/glossaryT.shtml#text">text</a> style sheets</td>
+<td>text style sheets</td>
 </tr><tr>
 <td>&lt;strike&gt;</td>
 <td class="h">strike through</td>
-<td><a href="../query/glossaryT.shtml#text">text</a> style sheets</td>
+<td>text style sheets</td>
 </tr><tr>
 <td>&lt;u&gt;</td>
 <td class="h">underline</td>
-<td><a href="../query/glossaryT.shtml#text">text</a> style sheets</td>
+<td>text style sheets</td>
 </tr>
 </table>
