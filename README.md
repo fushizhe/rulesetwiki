@@ -184,7 +184,7 @@ div {
 <a name="css2"/>
 
 ##### Use absolute units in CSS
-It is better to use relative rather than absolute units. This way the content of a page will adjust better to the browser window and fonts will be displayed relative to the users specifications or relative to the default settings of the browser. **But this may not always be the case**, in some situation, such as when developer needs to make accurate positioning of a widget in a page, then it might be better to use absuloute units. On the whole, the deceloper should deal with absuloute units when designing responsive applications.
+It is better to use relative rather than absolute units. This way the content of a page will adjust better to the browser window and fonts will be displayed relative to the users specifications or relative to the default settings of the browser. **But this may not always be the case**, in some situation, such as when developer needs to make accurate positioning of a widget in a page, then it might be better to use absuloute units. Anyway, the developer should deal with absuloute units when designing responsive applications.
 
 
 ```CSS
@@ -236,11 +236,11 @@ developer should provide 3D transform instead of 2D if possible：
 div
 {
   transform: rotateX(50px);
-  -webkit-transform: translate(50px);      /* Safari and Chrome */
-  -moz-transform: translate(50px);         /* Firefox */
-  transform: translate(50px);
-  -webkit-transform: translate(50px);      /* Safari and Chrome */
-  -moz-transform: translate(50px);         /* Firefox */
+  -webkit-transform: translateX(50px);      /* Safari and Chrome */
+  -moz-transform: translateX(50px);         /* Firefox */
+  transform: translateY(50px);
+  -webkit-transform: translateY(50px);      /* Safari and Chrome */
+  -moz-transform: translateY(50px);         /* Firefox */
 }
 ```
 
@@ -316,7 +316,7 @@ function changeCSS() {
 <a name="js2"/>
 
 ##### Use platform dependent Web Runtime APIs
-The developer should be aware that the supportability of platform dependent web runtime APIs' varies in different platforms. 
+The developer should be aware that the supportability of platform dependent web runtime APIs vary in different platforms. 
 Here is a picture showing the supportability of web sockets in different platforms.
 
 ![alt text](http://img13.poco.cn/mypoco/myphoto/20120814/11/6445810220120814112612097.png "websocket support")
