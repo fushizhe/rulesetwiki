@@ -208,7 +208,7 @@ h3 {wird-spacing: 3ch; }   /* relative to width of the "0" glyph in the element'
 h4 {font-size: 2rem; }	   /* relative to font size of the root element */
 p {font-size: 8vw; }       /* relative to viewport's width */
 p { margin: 2vh; }         /* relative to viewport's height */
-h4 { padding: 3vmin}       /* relative to minimum of the viewport's height and width */
+h4 { padding: 3vmin; }       /* relative to minimum of the viewport's height and width */
 ```
 	
 <a name="css3"/>
