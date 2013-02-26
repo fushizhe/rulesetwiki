@@ -19,6 +19,9 @@ Responsive Design RuleSet Wiki
 4.	[Find font-size/font](#css4)
 5.	[Use missing styles for target platform](#css5)
 6.	[Media Queries misuse, invalid or inproper use](#css6)
+7.	[Transform value may not fit for a different screen size](#css7)
+8.	[Unrecognized CSS background value](#css8)
+9.	[CSS syntax error](#css9)
 
 #### [JS](#js)
 1.	[Use consecutive multiple styles instead of class in scripts](#js1)
@@ -272,6 +275,23 @@ p {
 
 ##### Media Queries misuse, invalid or inproper use
 TBD
+
+<a name="css7">
+
+##### Media Queries misuse, invalid or inproper use
+TBD
+
+<a name="css8">
+
+##### Media Queries misuse, invalid or inproper use
+TBD
+
+<a name="css9">
+
+##### Media Queries misuse, invalid or inproper use
+TBD
+
+
 	
 <a name="js"/>
 <a name="js1"/>
