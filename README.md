@@ -296,7 +296,7 @@ There are 5 attributes controlling background, with a few more being added when 
 <a name="css9">
 
 ##### CSS syntax error
-TBD
+CSS syntax error includes invalid CSS property, value and other cause that leads to failure of parse. 
 
 
 	
