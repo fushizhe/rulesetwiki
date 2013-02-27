@@ -26,6 +26,7 @@ Responsive Design RuleSet Wiki
 #### [JS](#js)
 1.	[Use consecutive multiple styles instead of class in scripts](#js1)
 2.	[Use platform dependent Web Runtime APIs](#js2)
+3.	[Use PhoneGap API with quirks](#js3)
 
 #### [HTML](#html)
 1.	[Use consecutive multiple styles instead of class](#html1)
@@ -278,17 +279,22 @@ TBD
 
 <a name="css7">
 
-##### Media Queries misuse, invalid or inproper use
-TBD
+##### Transform value may not fit for a different screen size
+Some transform values may not fit for the current or other screen size, which may cause ugly effects.
 
 <a name="css8">
 
-##### Media Queries misuse, invalid or inproper use
-TBD
+##### Unrecognized CSS background value
+There are 5 attributes controlling background, with a few more being added when we have CSS3 support.
+1.	[background-attachment](http://www.evotech.net/blog/2008/08/css-background-properties/#bg1)
+1.	[background-color](http://www.evotech.net/blog/2008/08/css-background-properties/#bg2)
+1.	[background-image](http://www.evotech.net/blog/2008/08/css-background-properties/#bg3)
+1.	[background-position](http://www.evotech.net/blog/2008/08/css-background-properties/#bg4)
+1.	[background-repeat](http://www.evotech.net/blog/2008/08/css-background-properties/#bg5)
 
 <a name="css9">
 
-##### Media Queries misuse, invalid or inproper use
+##### CSS syntax error
 TBD
 
 
