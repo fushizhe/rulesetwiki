@@ -349,6 +349,14 @@ Here is a picture showing the supportability of web sockets in different platfor
 ![alt text](http://img13.poco.cn/mypoco/myphoto/20120814/11/6445810220120814112612097.png "websocket support")
 
 
+<a name="js3"/>
+
+##### Use PhoneGap API with quirks
+The developer should be aware that the supportability of different platforms using PhoneGap may have some quirks.
+Here is an example of "camera" in PhoneGap which has some quirks.
+
+![alt text](http://img14.poco.cn/mypoco/myphoto/20130227/11/644581022013022711413005.png "camera_quirks")
+
 <a name="html"/>
 <a name="html1"/>
 
