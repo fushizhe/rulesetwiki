@@ -287,10 +287,10 @@ Some transform values may not fit for the current or other screen size, which ma
 ##### Unrecognized CSS background value
 There are 5 attributes controlling background, with a few more being added when we have CSS3 support.
 1.	[background-attachment](http://www.evotech.net/blog/2008/08/css-background-properties/#bg1)
-1.	[background-color](http://www.evotech.net/blog/2008/08/css-background-properties/#bg2)
-1.	[background-image](http://www.evotech.net/blog/2008/08/css-background-properties/#bg3)
-1.	[background-position](http://www.evotech.net/blog/2008/08/css-background-properties/#bg4)
-1.	[background-repeat](http://www.evotech.net/blog/2008/08/css-background-properties/#bg5)
+2.	[background-color](http://www.evotech.net/blog/2008/08/css-background-properties/#bg2)
+3.	[background-image](http://www.evotech.net/blog/2008/08/css-background-properties/#bg3)
+4.	[background-position](http://www.evotech.net/blog/2008/08/css-background-properties/#bg4)
+5.	[background-repeat](http://www.evotech.net/blog/2008/08/css-background-properties/#bg5)
 
 <a name="css9">
 
