@@ -212,7 +212,7 @@ h3 {wird-spacing: 3ch; }   /* relative to width of the "0" glyph in the element'
 h4 {font-size: 2rem; }	   /* relative to font size of the root element */
 p {font-size: 8vw; }       /* relative to viewport's width */
 p { margin: 2vh; }         /* relative to viewport's height */
-h4 { padding: 3vmin; }       /* relative to minimum of the viewport's height and width */
+h4 { padding: 3vmin; }     /* relative to minimum of the viewport's height and width */
 ```
 	
 <a name="css3"/>
@@ -344,9 +344,11 @@ function changeCSS() {
 
 ##### Use platform dependent Web Runtime APIs
 The developer should be aware that the supportability of platform dependent web runtime APIs vary in different platforms. 
-Here is a picture showing the supportability of web sockets in different platforms.
+Here is an example of web sockets showing the supportability of web sockets in different platforms.
 
 ![alt text](http://img13.poco.cn/mypoco/myphoto/20120814/11/6445810220120814112612097.png "websocket support")
+
+For more information about Web Runtime APIs, please visit [this](http://caniuse.com/#cats=JS_API).
 
 
 <a name="js3"/>
